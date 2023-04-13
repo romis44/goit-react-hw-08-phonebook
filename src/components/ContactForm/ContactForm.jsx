@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
@@ -56,11 +59,10 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="inputForm">
+      <Box>
         <label className="inputLabel">
           Name
-          <input
-            className="inputField"
+          <TextField
             type="text"
             value={name}
             onChange={handleChange}
@@ -71,12 +73,11 @@ export default function ContactForm() {
             required
           />
         </label>
-      </div>
-      <div className="inputForm">
+      </Box>
+      <Box>
         <label className="inputLabel">
           Number
-          <input
-            className="inputField"
+          <TextField
             type="tel"
             value={number}
             onChange={handleChange}
@@ -87,10 +88,8 @@ export default function ContactForm() {
             required
           />
         </label>
-      </div>
-      <button className="inputButton" type="submit">
-        Add contact
-      </button>
+      </Box>
+      <Button type="submit">Add contact</Button>
     </form>
   );
 }

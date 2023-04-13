@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Container from '@mui/material/Container';
 
 import { fetchContacts } from 'redux/operations';
 import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
 
-import Layout from './components/Layout/Layout';
-import ContactList from './components/ContactList/ContactList';
-import ContactForm from './components/ContactForm/ContactForm';
-import Filter from './components/Filter/Filter';
+import ContactForm from 'components/ContactForm/ContactForm';
+import Filter from 'components/Filter/Filter';
+import ContactList from 'components/ContactList/ContactList';
 
-export default function App() {
+export default function ContactsPage() {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -21,19 +21,20 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    <Layout>
-      <h1 className="title">Phonebook</h1>
+    <Container>
+      <h1>Phonebook</h1>
       <ContactForm />
 
-      <h2 className="title">Contacts</h2>
+      <h2>Contacts</h2>
       <Filter />
 
       {isLoading && !error && <p style={{ textAlign: 'center' }}>Loading...</p>}
+
       {contacts.length === 0 && !isLoading ? (
         <p style={{ textAlign: 'center' }}>You don't have any contacts yet</p>
       ) : (
         <ContactList />
       )}
-    </Layout>
+    </Container>
   );
 }
