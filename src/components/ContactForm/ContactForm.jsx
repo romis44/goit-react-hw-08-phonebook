@@ -60,36 +60,53 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Box>
-        <label className="inputLabel">
-          Name
-          <TextField
-            type="text"
-            value={name}
-            onChange={handleChange}
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            placeholder="Roman Kovalchuk"
-            required
-          />
-        </label>
+        <TextField
+          id="standard-basic"
+          type="text"
+          value={name}
+          label="Name"
+          variant="standard"
+          onChange={handleChange}
+          name="name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required
+          fullWidth
+          sx={{
+            mb: '1rem',
+            color: '#1976d2',
+            backgroundColor: '#fffefe',
+          }}
+        />
       </Box>
       <Box>
-        <label className="inputLabel">
-          Number
-          <TextField
-            type="tel"
-            value={number}
-            onChange={handleChange}
-            name="number"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            placeholder="+380-00-000-0000"
-            required
-          />
-        </label>
+        <TextField
+          type="tel"
+          value={number}
+          onChange={handleChange}
+          name="number"
+          id="standard-basic"
+          label="Number"
+          variant="standard"
+          required
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          sx={{
+            mb: '1rem',
+            color: '#1976d2',
+            backgroundColor: '#fffefe',
+          }}
+        />
       </Box>
-      <Button type="submit">Add contact</Button>
+      <Button
+        type="submit"
+        variant="contained"
+        sx={{
+          mt: '20px',
+        }}
+      >
+        Add contact
+      </Button>
     </form>
   );
 }
