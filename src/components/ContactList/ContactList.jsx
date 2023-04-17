@@ -21,6 +21,10 @@ export default function ContactList() {
             </p>
             <Button
               type="button"
+              variant="contained"
+              sx={{
+                mt: '20px',
+              }}
               id={id}
               onClick={() => dispatch(deleteContact(id))}
             >

@@ -50,7 +50,15 @@ export default function RegisterForm() {
           <ErrorMessage name="password" component="div" />
         </label>
 
-        <Button type="submit">Register</Button>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            mt: '20px',
+          }}
+        >
+          Register
+        </Button>
       </Form>
     </Formik>
   );

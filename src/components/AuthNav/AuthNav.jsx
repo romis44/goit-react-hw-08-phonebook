@@ -4,9 +4,13 @@ import styled from '@emotion/styled';
 
 export default function AuthNav() {
   const StyledLink = styled(NavLink)`
-    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+
     &.active {
-      color: #127a3a;
+      color: rgb(55, 128, 31);
     }
   `;
 

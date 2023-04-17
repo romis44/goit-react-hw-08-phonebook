@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 
 import { useAuth } from 'hooks/useAuth';
@@ -9,7 +9,19 @@ export default function Header() {
 
   return (
     <AppBar position="static">
-      <Link to="/">Phonebook</Link>
+      <NavLink
+        style={{
+          color: '#3e7ce7',
+          background: '#bde39d',
+          padding: 5,
+          fontWeight: 600,
+          fontSize: 30,
+          textDecoration: 'none',
+        }}
+        to="/"
+      >
+        Phonebook
+      </NavLink>
 
       {isLoggedIn && <UserMenu />}
     </AppBar>

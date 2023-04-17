@@ -39,6 +39,7 @@ export default function ContactForm() {
       )
     ) {
       alert(`${name}: ${number} is already in contacts!`);
+
       return;
     }
 

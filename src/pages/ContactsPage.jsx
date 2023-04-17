@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Container from '@mui/material/Container';
+import { Container, Typography } from '@mui/material';
 
 import { fetchContacts } from 'redux/operations';
 import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
@@ -22,16 +22,22 @@ export default function ContactsPage() {
 
   return (
     <Container>
-      <h1>Phonebook</h1>
+      <Typography variant="h7" component="h2">
+        Phonebook
+      </Typography>
       <ContactForm />
 
-      <h2>Contacts</h2>
+      <Typography variant="h7" component="h2">
+        Contacts
+      </Typography>
       <Filter />
 
       {isLoading && !error && <p style={{ textAlign: 'center' }}>Loading...</p>}
 
       {contacts.length === 0 && !isLoading ? (
-        <p style={{ textAlign: 'center' }}>You don't have any contacts yet</p>
+        <p style={{ textAlign: 'center', fontWeight: 500 }}>
+          You don't have any contacts yet
+        </p>
       ) : (
         <ContactList />
       )}

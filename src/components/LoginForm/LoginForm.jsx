@@ -42,7 +42,15 @@ export default function LoginForm() {
           <ErrorMessage name="password" component="div" />
         </label>
 
-        <Button type="submit">Login</Button>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            mt: '20px',
+          }}
+        >
+          Login
+        </Button>
       </Form>
     </Formik>
   );

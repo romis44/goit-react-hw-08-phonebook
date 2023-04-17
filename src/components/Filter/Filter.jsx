@@ -14,15 +14,22 @@ export default function Filter() {
 
   return (
     <Box display="flex" alignItems="center" gap="10px">
-      <span>Find contacts by name</span>
       <TextField
         type="text"
         value={filter}
         onChange={onChange}
+        label="Find contacts by name"
         name="filter"
+        id="standard-basic"
+        variant="standard"
+        sx={{
+          mb: '1rem',
+          color: '#1976d2',
+          backgroundColor: '#fffefe',
+          width: '100%',
+        }}
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        placeholder="Roman Kovalchuk"
         required
       />
     </Box>
