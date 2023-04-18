@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import { useSelector } from 'react-redux';
-import Button from '@mui/material/Button';
+import { Button, Typography } from '@mui/material';
 
 import { selectVisibleContacts } from 'redux/selectors';
 
@@ -16,9 +16,19 @@ export default function ContactList() {
       {visibleContacts.map(({ id, name, number }) => {
         return (
           <li key={id}>
-            <p>
+            {/* <p>
               {name}: {number}
-            </p>
+            </p> */}
+            <Typography
+              variant="h7"
+              component="h2"
+              color="#1577d8"
+              borderRadius="5px"
+              padding="2px"
+              backgroundColor="#c4ffd6"
+            >
+              {name}: {number}
+            </Typography>
             <Button
               type="button"
               variant="contained"

@@ -35,7 +35,7 @@ export default function ContactsPage() {
       {isLoading && !error && <p style={{ textAlign: 'center' }}>Loading...</p>}
 
       {contacts.length === 0 && !isLoading ? (
-        <p style={{ textAlign: 'center', fontWeight: 500 }}>
+        <p style={{ textAlign: 'center', fontWeight: 500, color: '#ef0b14' }}>
           You don't have any contacts yet
         </p>
       ) : (

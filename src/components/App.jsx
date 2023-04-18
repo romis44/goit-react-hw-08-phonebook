@@ -10,7 +10,7 @@ import PrivateRoute from './PrivateRoute';
 
 import Layout from './Layout/Layout';
 const Home = lazy(() => import('./Home/Home'));
-const AuthenticationPage = lazy(() => import('../pages/AuthenticationPage'));
+
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
@@ -34,35 +34,30 @@ export default function App() {
             }
           />
 
-          <Route path="authentication" element={<AuthenticationPage />}>
-            <Route
-              path="login"
-              element={
-                <RestrictedRoute
-                  redirectTo="/contacts"
-                  component={<LoginPage />}
-                />
-              }
-            />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
 
-            <Route
-              path="register"
-              element={
-                <RestrictedRoute
-                  redirectTo="/contacts"
-                  component={<RegisterPage />}
-                />
-              }
-            />
-          </Route>
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
 
           <Route
             path="contacts"
             element={
-              <PrivateRoute
-                redirectTo="/authentication/login"
-                component={<ContactsPage />}
-              />
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           />
         </Route>

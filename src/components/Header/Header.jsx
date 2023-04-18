@@ -12,7 +12,7 @@ export default function Header() {
       <NavLink
         style={{
           color: '#3e7ce7',
-          background: '#bde39d',
+          background: '#6ee860',
           padding: 5,
           fontWeight: 600,
           fontSize: 30,

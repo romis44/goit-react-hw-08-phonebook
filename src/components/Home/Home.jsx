@@ -12,7 +12,7 @@ export default function Home() {
 
       <div>
         <Link
-          to="authentication/login"
+          to="/login"
           style={{
             marginRight: '10px',
             color: '#2742b9',
@@ -25,7 +25,7 @@ export default function Home() {
         </Link>
 
         <Link
-          to="authentication/register"
+          to="/register"
           style={{
             color: '#2742b9',
             fontWeight: 500,
